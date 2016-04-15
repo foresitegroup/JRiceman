@@ -81,7 +81,7 @@ H2 {
 }
 
 #menu LI {
-  float: left;
+  display: inline-block;
   padding-left: 3em;
 }
 
@@ -97,7 +97,8 @@ H2 {
 
 #menu LI A:hover,
 #menu LI A:active,
-#menu LI SPAN {
+#menu LI SPAN,
+#menu LI SPAN A:link {
   color: #0072BC;
   text-decoration: none;
 }
@@ -176,7 +177,7 @@ H2 {
 }
 
 .machines {
-  padding: 2.9em 0;
+  padding: 1.9em 0;
   background: #EBEBEB;
   text-align: center;
 }
@@ -184,16 +185,17 @@ H2 {
 .machines IMG {
   height: 180px;
   width: auto;
-  margin: 0 0.9em;
+  margin: 1em 0.9em;
 }
 
 .logos {
-  padding: 2.4em 0;
+  padding: 1.4em 0;
+  text-align: center;
 }
 
 .logos IMG {
   vertical-align: middle;
-  margin-right: 6.4%;
+  margin: 1em 6.4% 1em 0;
 }
 
 .logos IMG:last-child {
@@ -201,13 +203,13 @@ H2 {
 }
 
 .call {
-  padding: 1em 0;
+  padding: 1.5em 2%;
   background: #003A5F;
   color: #FFFFFF;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 111%;
-  line-height: 2em;
+  line-height: 1em;
   text-align: center;
 }
 
@@ -255,7 +257,7 @@ H2 {
   font-weight: 700;
   font-size: 150%;
   line-height: 1em;
-  margin: 0;
+  margin: 0 0 0.6em;
   padding-top: 0.3em;
 }
 
@@ -268,15 +270,25 @@ H2 {
 }
 
 .footer-contact .col1 UL LI {
-  padding-top: 0.7em;
+  padding: 0 0.7em 0.7em 0;
+  position: relative;
+}
+
+.footer-contact .col1 UL LI:last-child {
+  padding-bottom: 0;
 }
 
 .footer-contact .col1 UL LI:after {
   font-family: Arial, Helvetica, sans-serif;
   content: "\2022";
-  padding-left: 0.5em;
-  position: relative;
+  position: absolute;
   top: 2px;
+  right: 0;
+}
+
+.footer-contact .col1 A:link {
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 .footer-contact .col2 .required {
@@ -390,7 +402,7 @@ TEXTAREA.notfilled:-ms-input-placeholder { color: #FFFFFF; } /* IE 10+ */
 }
 
 .credit {
-  padding: 1.85em 0;
+  padding: 1.85em 2%;
   background: #EBEBEB;
   color: #013E65;
   font-weight: 600;
@@ -404,7 +416,7 @@ TEXTAREA.notfilled:-ms-input-placeholder { color: #FFFFFF; } /* IE 10+ */
 }
 
 .copyright {
-  padding: 2em 0;
+  padding: 2em 2%;
   text-align: center;
   font-size: 52%;
   line-height: 1em;
@@ -413,6 +425,42 @@ TEXTAREA.notfilled:-ms-input-placeholder { color: #FFFFFF; } /* IE 10+ */
 
 @media only screen and (max-width: 800px) {
   /* Small computer or landscape tablet */
+  .site-width {
+    width: 96%;
+  }
+
+  .specialist .col1 {
+    font-size: 130%;
+  }
+
+  .machines IMG {
+    margin: 1em 2em;
+  }
+
+  .logos IMG,
+  .logos IMG:last-child {
+    margin: 1em 5%;
+  }
+
+  .call {
+    line-height: 1.2em;
+  }
+
+  .footer-contact .col1 {
+    line-height: 1.2em;
+  }
+
+  .footer-contact .col1 H1 {
+    font-size: 320%;
+  }
+
+  .footer-contact .col1 H2 {
+    font-size: 260%;
+  }
+
+  .footer-contact .col1 H3 {
+    font-size: 132%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -421,8 +469,109 @@ TEXTAREA.notfilled:-ms-input-placeholder { color: #FFFFFF; } /* IE 10+ */
 
 @media only screen and (max-width: 600px) {
   /* Small tablet */
+  .header {
+    text-align: center;
+  }
+
+  #logo,
+  #menu {
+    float: none;
+  }
+
+  .specialist .col1,
+  .specialist .col2 {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  .specialist .col1 {
+    text-align: left;
+    font-size: 176%;
+    padding-bottom: 0.5em;
+  }
+
+  .footer-contact .col1,
+  .footer-contact .col2 {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  .footer-contact .col1 {
+    text-align: center;
+    padding-bottom: 2em;
+  }
+
+  .footer-contact .col1 H1 {
+    font-size: 444%;
+  }
+
+  .footer-contact .col1 H2 {
+    font-size: 300%;
+  }
+
+  .footer-contact .col1 H3 {
+    font-size: 150%;
+  }
+
+  .footer-contact .col1 UL LI {
+    padding: 0 0 0.7em 0;
+  }
+
+  .footer-contact .col1 UL LI:after {
+    content: "";
+  }
+
+  .copyright SPAN {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    margin: 0.2em 0;
+  }
 }
 
 @media only screen and (max-width: 480px) {
   /* Phone */
+  #menu {
+    line-height: 1em;
+  }
+
+  #menu LI,
+  #menu LI:first-child {
+    padding: 0.5em 2em;
+  }
+
+  #menu LI SPAN {
+    display: block;
+  }
+
+  .banner {
+    font-size: 125%;
+  }
+
+  .banner H2 {
+    font-size: 150%;
+  }
+
+  .banner A:link,
+  .banner A:visited {
+    margin: 1.5em 0.5em 0;
+    min-width: 140px;
+  }
+
+  .machines IMG {
+    height: 105px;
+    margin: 0.5em 0.5em;
+  }
+
+  .footer-contact .col1 H1 {
+    font-size: 375%;
+  }
+
+  .one-half {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
 }

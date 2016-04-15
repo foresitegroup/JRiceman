@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -115,7 +116,7 @@
       </div>
 
       <div class="col2">
-        <script type="text/javascript" src="<?php echo $TopDir; ?>inc/jquery.mask.min.js"></script>
+        <script type="text/javascript" src="inc/jquery.mask.min.js"></script>
         <script type="text/javascript">
           $(document).ready(function() {
             $.jMaskGlobals.watchDataMask = true;
@@ -175,7 +176,7 @@
         </noscript>
 
         <div class="required">* Required</div>
-        <form action="<?php echo $TopDir; ?>form-contact.php" method="POST" id="contact-form">
+        <form action="form-contact.php" method="POST" id="contact-form">
           <div>
             <input type="text" name="<?php echo md5("name" . $ip . $salt . $timestamp); ?>" id="name" placeholder="* First &amp; Last Name">
 
@@ -215,7 +216,7 @@
     </div>
 
     <div class="copyright">
-      &copy; <?php echo date("Y"); ?> J/R Ice &amp; Refrigeration LLC &bull; Randy Lee Anderson, Owner &bull; 11038 W. Heritage Dr, Milwaukee, WI 53224
+      &copy; <?php echo date("Y"); ?> J/R Ice &amp; Refrigeration LLC <span>&bull;</span> Randy Lee Anderson, Owner <span>&bull;</span> 11038 W. Heritage Dr, Milwaukee, WI 53224
 
     </div>
 
